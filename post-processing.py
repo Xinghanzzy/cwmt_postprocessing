@@ -77,31 +77,33 @@ if __name__ == '__main__':
                 pos = 0
                 start = 0
                 subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
-                temp_en = ""
                 while subpos != -1:
+                    temp_en = ""
                     start = subpos
                     tempsubpos = subpos
                     for i in line_en:
                         if tempsubpos == 0:
+                            temp_en += i
+                            print("temp_en :" + temp_en)
                             if RemoveSpaceToSmaoll(temp_en) == zh_processed:
+                                print("done!")
                                 print(temp_en)
                                 print(zh_processed)
-                            else:
-                                temp_en += i
-                            pass
-                        if i != ' ':
-                            print(i)
                             continue
-                        else:
+                        if i != ' ':
                             tempsubpos = tempsubpos - 1
+                        else:
+                            pass
+                    pos = pos + 1
+                    subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
+                    print(subpos)
             if len(find_lcseque(en_processed,zh_processed))/len(zh_processed) > 0.7 :      #这个数值待调整
-
                 pass
-
             else:
                 file_log.write("\nradio <= 0.7: \n")                
                 file_log.write(line_en)
                 file_log.write(item)
+        break
         # word_bags
         
 
