@@ -27,7 +27,7 @@ def find_lcseque(s1, s2):
                 m[p1+1][p2+1] = m[p1][p2+1]     
                 d[p1+1][p2+1] = 'up'           
     (p1, p2) = (len(s1), len(s2))   
-    print numpy.array(d)  
+    # print numpy.array(d)  
     s = []   
     while m[p1][p2]:    #不为None时  
         c = d[p1][p2]  
@@ -49,24 +49,32 @@ def find_n_sub_str(src, sub, pos, start):
     return index
 
 if __name__ == '__main__':
-    file1 = open("en.txt","r")
-    file2 = open("ggzh.txt","r")
-    file3 = open("ggout1.txt","w")
-    file_log = open("log.txt","a")
+    file1 = open("outen.txt","r",encoding='UTF-8')
+    file2 = open("ggzh.txt","r",encoding='UTF-8')
+    file3 = open("ggout1.txt","w",encoding='UTF-8')
+    file_log = open("log.txt","a",encoding='UTF-8')
     file_log.write("\n*****************************************************\n\n")
 
     pattern = re.compile(r'[ 0-9A-Za-z]+')
     while True:
         line_en = file1.readline()
-        line_zh = file2.readline()
+        line_zh = file2.readline()     
         if line_en == None or line_zh == None :
             break
-        re_ans = pattern.findall(line_zh)
+
+        # 测试
+        line_en = "i have an iPhone 7"
+        line_zh = "我有一个iphone7"
+        
+        re_ans = pattern.findall(line_zh)   #中文中的所有英文成分
         for item in re_ans:
+            # item 去掉首尾空格
+            item = item.strip()
+            # 完全去空格处理
             en_processed = RemoveSpaceToSmaoll(line_en)
             zh_processed = RemoveSpaceToSmaoll(item)
             if zh_processed in en_processed:   # 完全相同 大小写和空格问题 解决方法 定位，完全替换
-                pos = 1
+                pos = 0
                 start = 0
                 subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
                 temp_en = ""
@@ -76,11 +84,13 @@ if __name__ == '__main__':
                     for i in line_en:
                         if tempsubpos == 0:
                             if RemoveSpaceToSmaoll(temp_en) == zh_processed:
-                                pass
+                                print(temp_en)
+                                print(zh_processed)
                             else:
                                 temp_en += i
                             pass
                         if i != ' ':
+                            print(i)
                             continue
                         else:
                             tempsubpos = tempsubpos - 1
