@@ -55,21 +55,29 @@ if __name__ == '__main__':
     file_log = open("log.txt","a",encoding='UTF-8')
     file_log.write("\n*****************************************************\n\n")
 
-    pattern = re.compile(r'[ 0-9A-Za-z]+')
+    pattern = re.compile(r'[ 0-9A-Za-z.]+')
     while True:
         line_en = file1.readline()
-        line_zh = file2.readline()     
-        if line_en == None or line_zh == None :
-            break
+        line_zh = file2.readline()
 
+        if line_en == None or line_zh == None or len(line_en) == 0 or len(line_zh) == 0:
+            break
         # 测试
-        line_en = "i have an iPhone 7"
-        line_zh = "我有一个iphone7"
+        # line_en = "i have an iPhone 7"
+        # line_zh = "我有一个iphone7"
         
         re_ans = pattern.findall(line_zh)   #中文中的所有英文成分
         for item in re_ans:
             # item 去掉首尾空格
             item = item.strip()
+            # 终止处理
+            if len(item) == 0:
+                continue
+            if item == '.' or item[0] == '.' :
+                continue
+            if item in line_en :
+                continue
+
             # 完全去空格处理
             en_processed = RemoveSpaceToSmaoll(line_en)
             zh_processed = RemoveSpaceToSmaoll(item)
@@ -82,13 +90,16 @@ if __name__ == '__main__':
                     start = subpos
                     tempsubpos = subpos
                     for i in line_en:
+                        # 先tempsubpos定位到带个相同的位置 然后 获取
                         if tempsubpos == 0:
                             temp_en += i
-                            print("temp_en :" + temp_en)
+                            # print("temp_en :" + temp_en)
                             if RemoveSpaceToSmaoll(temp_en) == zh_processed:
-                                print("done!")
-                                print(temp_en)
-                                print(zh_processed)
+                                if temp_en.strip() != item.strip():
+                                    print("done!")
+                                    print(line_en, line_zh)
+                                    print("temp_en : " + temp_en )
+                                    print("item : " + item)
                             continue
                         if i != ' ':
                             tempsubpos = tempsubpos - 1
@@ -96,14 +107,15 @@ if __name__ == '__main__':
                             pass
                     pos = pos + 1
                     subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
-                    print(subpos)
+                    # print(subpos)
             if len(find_lcseque(en_processed,zh_processed))/len(zh_processed) > 0.7 :      #这个数值待调整
                 pass
             else:
                 file_log.write("\nradio <= 0.7: \n")                
                 file_log.write(line_en)
                 file_log.write(item)
-        break
+        # break
         # word_bags
-        
+
+    print("Done!")
 
