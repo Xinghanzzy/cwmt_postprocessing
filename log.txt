@@ -1,0 +1,172 @@
+
+*****************************************************
+
+temp_en :  iPhone7item : iPhone 7en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago .oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % .newzh:	7 % 的 受访者 预计 会 购买  iPhone7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+temp_en :  iPhone7 item : iPhone 7en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago .oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % .newzh:	7 % 的 受访者 预计 会 购买  iPhone7  , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+temp_en :  iPhone6item : iPhone 6en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago .oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % .newzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而  iPhone6 的 价格 在 两 年前 只有 4 % . 
+temp_en :  iPhone6 item : iPhone 6en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago .oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % .newzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而  iPhone6  的 价格 在 两 年前 只有 4 % . 
+temp_en :  90 mgitem : 90mgen:	The draft NICE guidance , published today , recommends that people be given 90 mg of ticagrelor for 12 months , followed by 60mg along with aspirin twice a day for another three years .oldzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予 90mg 替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 .newzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予  90 mg 替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 . 
+temp_en :  90 mg item : 90mgen:	The draft NICE guidance , published today , recommends that people be given 90 mg of ticagrelor for 12 months , followed by 60mg along with aspirin twice a day for another three years .oldzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予 90mg 替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 .newzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予  90 mg  替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 . 
+temp_en :  twitteritem : Twitteren:	Another twitter user , Sarah Paradis , wrote : ' Wow # ByronMacDonald .oldzh:	另 一 位 Twitter 用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 .newzh:	另 一 位  twitter 用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 . 
+temp_en :  twitter item : Twitteren:	Another twitter user , Sarah Paradis , wrote : ' Wow # ByronMacDonald .oldzh:	另 一 位 Twitter 用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 .newzh:	另 一 位  twitter  用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 . 
+temp_en :  twitteritem : Twitteren:	CBC then copied and pasted their apology to more than 90 other twitter users who complained about MacDonald 's commentsoldzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他 Twitter 用户newzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他  twitter 用户 
+temp_en :  twitter item : Twitteren:	CBC then copied and pasted their apology to more than 90 other twitter users who complained about MacDonald 's commentsoldzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他 Twitter 用户newzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他  twitter  用户 
+temp_en :  ois Mollaitem : oisMollaen:	The judge , Jean - Fran ? ois Molla , said the groceries , cafes and restaurants played a much bigger role than simply feeding people that " live in extremely precarious conditions . "oldzh:	法官 Jean - FrançoisMolla 称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 .newzh:	法官 Jean - Franç ois Molla 称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 . 
+temp_en :  ois Molla item : oisMollaen:	The judge , Jean - Fran ? ois Molla , said the groceries , cafes and restaurants played a much bigger role than simply feeding people that " live in extremely precarious conditions . "oldzh:	法官 Jean - FrançoisMolla 称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 .newzh:	法官 Jean - Franç ois Molla  称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 . 
+temp_en :  J.item : J .en:	The case is Bordini v. Donald J. Trump For President Inc . , 16 - CS-14300 , General Court of Justice , Superior Court Division County of Mecklenburg ( Charlotte ) .oldzh:	案件 是 Bordini 诉 唐纳德 J . 特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) .newzh:	案件 是 Bordini 诉 唐纳德  J. 特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) . 
+temp_en :  J. item : J .en:	The case is Bordini v. Donald J. Trump For President Inc . , 16 - CS-14300 , General Court of Justice , Superior Court Division County of Mecklenburg ( Charlotte ) .oldzh:	案件 是 Bordini 诉 唐纳德 J . 特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) .newzh:	案件 是 Bordini 诉 唐纳德  J.  特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) . 
+
+*****************************************************
+
+
+
+temp_en :  iPhone7item : iPhone 7en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago . 
+oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+newzh:	7 % 的 受访者 预计 会 购买  iPhone7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+
+
+temp_en :  iPhone7 item : iPhone 7en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago . 
+oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+newzh:	7 % 的 受访者 预计 会 购买  iPhone7  , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+
+
+temp_en :  iPhone6item : iPhone 6en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago . 
+oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+newzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而  iPhone6 的 价格 在 两 年前 只有 4 % . 
+
+
+temp_en :  iPhone6 item : iPhone 6en:	7 % of respondents expected to buy iPhone7 , while the rate for iPhone6 was only 4 % two years ago . 
+oldzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而 iPhone 6 的 价格 在 两 年前 只有 4 % . 
+newzh:	7 % 的 受访者 预计 会 购买 iPhone 7 , 而  iPhone6  的 价格 在 两 年前 只有 4 % . 
+
+
+temp_en :  90 mgitem : 90mgen:	The draft NICE guidance , published today , recommends that people be given 90 mg of ticagrelor for 12 months , followed by 60mg along with aspirin twice a day for another three years . 
+oldzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予 90mg 替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 . 
+newzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予  90 mg 替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 . 
+
+
+temp_en :  90 mg item : 90mgen:	The draft NICE guidance , published today , recommends that people be given 90 mg of ticagrelor for 12 months , followed by 60mg along with aspirin twice a day for another three years . 
+oldzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予 90mg 替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 . 
+newzh:	今天 发布 的 NICE 指南 草案 建议 人们 给予  90 mg  替 格 瑞 洛 12 个 月 , 随后 60mg 和 阿司匹林 每天 两 次 再 使用 3 年 . 
+
+
+temp_en :  twitteritem : Twitteren:	Another twitter user , Sarah Paradis , wrote : ' Wow # ByronMacDonald . 
+oldzh:	另 一 位 Twitter 用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 . 
+newzh:	另 一 位  twitter 用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 . 
+
+
+temp_en :  twitter item : Twitteren:	Another twitter user , Sarah Paradis , wrote : ' Wow # ByronMacDonald . 
+oldzh:	另 一 位 Twitter 用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 . 
+newzh:	另 一 位  twitter  用户 Sarah Paradis 写道 :' 哇 # 拜伦 麦克唐纳 . 
+
+
+temp_en :  twitteritem : Twitteren:	CBC then copied and pasted their apology to more than 90 other twitter users who complained about MacDonald 's comments 
+oldzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他 Twitter 用户 
+newzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他  twitter 用户 
+
+
+temp_en :  twitter item : Twitteren:	CBC then copied and pasted their apology to more than 90 other twitter users who complained about MacDonald 's comments 
+oldzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他 Twitter 用户 
+newzh:	然后 , CBC 将 他们 的 道歉 复制 并 粘贴 给 90 多 位 抱怨 MacDonald 评论 的 其他  twitter  用户 
+
+
+temp_en :  ois Mollaitem : oisMollaen:	The judge , Jean - Fran ? ois Molla , said the groceries , cafes and restaurants played a much bigger role than simply feeding people that " live in extremely precarious conditions . " 
+oldzh:	法官 Jean - FrançoisMolla 称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 . 
+newzh:	法官 Jean - Franç ois Molla 称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 . 
+
+
+temp_en :  ois Molla item : oisMollaen:	The judge , Jean - Fran ? ois Molla , said the groceries , cafes and restaurants played a much bigger role than simply feeding people that " live in extremely precarious conditions . " 
+oldzh:	法官 Jean - FrançoisMolla 称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 . 
+newzh:	法官 Jean - Franç ois Molla  称 , 杂货店 , 咖啡馆 和 餐馆 的 作用 远远 大于 简单 喂养 " 生活 在 极端 危险 条件 下 " 的 人们 . 
+
+
+temp_en :  J.item : J .en:	The case is Bordini v. Donald J. Trump For President Inc . , 16 - CS-14300 , General Court of Justice , Superior Court Division County of Mecklenburg ( Charlotte ) . 
+oldzh:	案件 是 Bordini 诉 唐纳德 J . 特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) . 
+newzh:	案件 是 Bordini 诉 唐纳德  J. 特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) . 
+
+
+temp_en :  J. item : J .en:	The case is Bordini v. Donald J. Trump For President Inc . , 16 - CS-14300 , General Court of Justice , Superior Court Division County of Mecklenburg ( Charlotte ) . 
+oldzh:	案件 是 Bordini 诉 唐纳德 J . 特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) . 
+newzh:	案件 是 Bordini 诉 唐纳德  J.  特朗普 总统 公司 . , 16 - CS-14300 , 普通 法院 , 梅克伦堡 县 高等 法院 区 ( 夏洛特 ) . 
+
+*****************************************************
+
+
+radio <= 0.7: 
+Although not yet confirmed , it is said by many sources that Apple 's 2016 autumn conference will be held in September , and iPhone7 would really hit the market . 
+9
+radio <= 0.7: 
+According to statistics , among all iPhone users , about 26 % of users have not changed their phones for two years . That is , almost 120 million users of iPhones have been using the same iPhone for two years . 
+1.2
+radio <= 0.7: 
+In July , the CPI rose by 1.8 % , with a month - on - month rise of 0.2 % . From January to July , The CPI rose by 2.1 % , so the overall price situation was stable . 
+7
+radio <= 0.7: 
+In July , the CPI rose by 1.8 % , with a month - on - month rise of 0.2 % . From January to July , The CPI rose by 2.1 % , so the overall price situation was stable . 
+7
+radio <= 0.7: 
+At the press conference on August 10 , after postoperative rehabilitation , Gresham finally appeared and showed people its brand new 3D printing plastic beak . 
+8
+radio <= 0.7: 
+Japan 's largest oil company JX Energy believes that " China 's export expansion is one of the reasons for the market downturn . " the Cankaoxiaoxi website reported on August 12 . 
+8
+radio <= 0.7: 
+In order to ensure the long - term effect of afforestation , HKND Group also produced an afforestation training album , which is distributed to all the 15,000 primary and secondary school students in the province and aimed to provide long - term technical guidance for teachers , students and their parents . 
+1.5
+radio <= 0.7: 
+On the morning of September 11 , at the Jining City Bus Company IC Card Sales Center , several elderly people are queuing to apply for a card . The 62 - year - old Yao obtained his half - price card for the elderly . 
+9
+radio <= 0.7: 
+This October 1 , the International Monetary Fund will officially accept the yuan , which will become SDR weight currency . 
+10
+radio <= 0.7: 
+It is a pity that OPEC 's latest monthly report shows that the crude oil production in July continued to increase and Saudi Arabia 's output hit a new high . 
+7
+radio <= 0.7: 
+On Monday , OPEC President Qatar 's Minister of Energy and Industry Mohammed Saleh al - Sada said that OPEC will hold an informal meeting at the International Energy Forum on September 26 - 28 . 
+9
+radio <= 0.7: 
+The monthly report of OPEC released on Wednesday showed that the July output of the entire OPEC organization , including Gabon , increased by 46,000 barrels / day to 33.11 million barrels / day . 
+7
+radio <= 0.7: 
+It is deemed very unlikely by people that OPEC tries to stabilize the market through the September meeting , according to Eugen Weinberg , director of commodity research at Commerzbank . 
+9
+radio <= 0.7: 
+In the late 1990s , when Mr Putin was head of the Federal Security Service (FSB) , which replaced the KGB , Mr Ivanov was appointed as his deputy . 
+20
+radio <= 0.7: 
+In July , Mr Hunt revealed plans to impose the contract saying the NHS was in " no man 's land " and any further delay would be damaging for staff and patients . 
+7
+radio <= 0.7: 
+Employers were hopeful that the continued positive engagement on other important topics - such as deployment , flexibility in training , additional training for those returning from career breaks , costs of training , mutual recognition of syllabus , study leave and the gender pay gap in medicine - were a sign of how serious employers , Health Education England and the Department of Health were about honouring the agreements reached with the BMA in November , February and May. 
+11
+radio <= 0.7: 
+Employers were hopeful that the continued positive engagement on other important topics - such as deployment , flexibility in training , additional training for those returning from career breaks , costs of training , mutual recognition of syllabus , study leave and the gender pay gap in medicine - were a sign of how serious employers , Health Education England and the Department of Health were about honouring the agreements reached with the BMA in November , February and May. 
+2
+radio <= 0.7: 
+Employers were hopeful that the continued positive engagement on other important topics - such as deployment , flexibility in training , additional training for those returning from career breaks , costs of training , mutual recognition of syllabus , study leave and the gender pay gap in medicine - were a sign of how serious employers , Health Education England and the Department of Health were about honouring the agreements reached with the BMA in November , February and May. 
+5
+radio <= 0.7: 
+The draft NICE guidance , published today , recommends that people be given 90 mg of ticagrelor for 12 months , followed by 60mg along with aspirin twice a day for another three years . 
+3
+radio <= 0.7: 
+A Primark spokesman said : ' Primark is aware of an incident which took place in our Folkestone store on Tuesday August 9 . ' 
+8
+radio <= 0.7: 
+Senate Republicans have blocked Garland 's confirmation since President Barack Obama nominated him in March . 
+3
+radio <= 0.7: 
+The salon is set for 2 p.m. to 4 p.m. on Aug. 21 in the Salle Moderne at the Art Deco Southwestern School of Law , ( formerly Bullocks Wilshire ) , 3050 Wilshire Blvd . 
+8
+radio <= 0.7: 
+With its lens tool , Snapchat allows some 150 million daily users to alter reality and play with identity in ways that border on the absurd . 
+1.5
+radio <= 0.7: 
+AGL said the contracts are so - called 'hedging contracts ' which were due to take effect from November 2016 . 
+11
+radio <= 0.7: 
+We have a great team at Heathrow who have implemented an  11 bn programme of infrastructure investment on time and on budget , from T5 - voted the world 's best airport terminal five years in a row , to T2 , built in the middle of the world 's busiest two runways . 
+1100
+radio <= 0.7: 
+Last year a police officer was acquitted of causing death by negligence after she hit and killed a man who was lying on the A1 near Paynerne one night in August 2014 . 
+8

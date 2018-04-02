@@ -51,10 +51,10 @@ def find_n_sub_str(src, sub, pos, start):
 if __name__ == '__main__':
     # file1 = open("en.txt","r",encoding='UTF-8')
     # file2 = open("ggzh_mt061.txt","r",encoding='UTF-8')
-    file1 = open("outen.txt", "r", encoding='UTF-8')
-    file2 = open("ggzh.txt", "r", encoding='UTF-8')
-    file3 = open("ggout1.txt","w",encoding='UTF-8')
-    file_log = open("loen2zh.txt","a",encoding='UTF-8')
+    file1 = open("mt06post\en.txt", "r", encoding='UTF-8')
+    file2 = open("mt06post\zh.txt", "r", encoding='UTF-8')
+    file3 = open("ggout2.txt","w",encoding='UTF-8')
+    file_log = open("lozh2en.txt","a",encoding='UTF-8')
     file_log.write("\n*****************************************************\n\n")
 
     pattern = re.compile(r'[ 0-9A-Za-z.]+')
@@ -100,10 +100,11 @@ if __name__ == '__main__':
                                     # print("done!")
                                     file_log.write("temp_en : " + temp_en +"\n")
                                     file_log.write("item : " + item +"\n")
-                                    file_log.write("en:\t" + line_en.strip() +"\n")
-                                    file_log.write("oldzh:\t" + oldzh.strip() +"\n")
-                                    file_log.write("newzh:\t" + line_zh.replace(item,temp_en.strip()) +"\n" +"\n")
-                                    line_zh = line_zh.replace(item,temp_en.strip())
+
+                                    file_log.write("zh:\t" + oldzh.strip() +"\n")
+                                    file_log.write("olden:\t" + line_en.strip() + "\n")
+                                    file_log.write("newen:\t" + line_en.replace(temp_en.strip(),item) +"\n" +"\n")
+                                    line_en = line_en.replace(temp_en.strip(),item)
                                     break
                             continue
                         if i != ' ':
@@ -120,7 +121,7 @@ if __name__ == '__main__':
                 # file_log.write("\nradio <= 0.7: \n")
                 # file_log.write(line_en)
                 # file_log.write(item)
-        file3.write(line_zh.strip() + "\n")
+        file3.write(line_en.strip() + "\n")
 
     print("Done!")
 
