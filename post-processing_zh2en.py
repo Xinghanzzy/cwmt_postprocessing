@@ -4,6 +4,12 @@ import re
 import numpy
 # en2zh
 
+# 2018-4-6 15:54:31
+# 完全匹配完成,修改部分符号问题
+#       消除所有符号再额外进行匹配&替换
+#
+#
+#
 def RemoveSpaceToSmaoll(str):
     str = str.replace(" ","")
     str = str.lower()
@@ -48,26 +54,53 @@ def find_n_sub_str(src, sub, pos, start):
         return find_n_sub_str(src, sub, pos - 1, index + 1)
     return index
 
+
+
 if __name__ == '__main__':
     # file1 = open("en.txt","r",encoding='UTF-8')
     # file2 = open("ggzh_mt061.txt","r",encoding='UTF-8')
-    file1 = open("mt06post\en.txt", "r", encoding='UTF-8')
-    file2 = open("mt06post\zh.txt", "r", encoding='UTF-8')
-    file3 = open("ggout2.txt","w",encoding='UTF-8')
+    file1 = open("cwmt18-dev.beam12.alpha1.3.ensemble15.trans", "r", encoding='UTF-8') # en
+    file2 = open("cwmt-zh.dev.replace.token.del", "r", encoding='UTF-8') # zh
+    file3 = open("liout2.txt","w",encoding='UTF-8')
+    file4 = open("dont.txt", "w", encoding='UTF-8')
     file_log = open("lozh2en.txt","a",encoding='UTF-8')
     file_log.write("\n*****************************************************\n\n")
 
+    pattern_allsymbol = re.compile(r'[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。？、~@#￥%……&*（）]+')
     pattern = re.compile(r'[ 0-9A-Za-z.]+')
+    pattern2 = re.compile(r'[A-Za-z]+')
     pattern = re.compile(r'[^\u4e00-\u9fa5]+')
 
     while True:
         line_en = file1.readline()
         line_zh = file2.readline()
+        # 测试
+        # line_en = "But that does not prevent the industry from seeing the iPhone 7 's prospects - - which many believe will likely be the last big upgrade for Apple 's iPhone lineup . "
+        # line_zh = "但 这 并 不 妨碍 业内人士 看好 iPhone7 的 前景 - - 许多 人 认为 , iPhone7 将 很 有 可能 成为 苹果 对 iPhone 系列 的 最后 一 次 大幅 升级 . "
         oldzh = line_zh
         if line_en == None or line_zh == None or len(line_en) == 0 or len(line_zh) == 0:
             break
 
+        # 判断是否为包含英文
+        ans2 = pattern2.findall(line_zh)
+        if len(ans2) == 0:
+            file3.write(line_en.strip() + "\n")
+            continue
+
+        flag = 1
         re_ans = pattern.findall(line_zh)   #中文中的所有英文成分
+
+        # 预处理
+        for item in re_ans:
+            # item = item.strip()
+            if len(item) == 0:
+                re_ans.remove(item)
+            else:
+                item_sub = re.sub(r"[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。？、~@#￥%……&*（）]+", "",item)
+                if item != item_sub :
+                    re_ans.append(item_sub)
+        print(re_ans)
+
         for item in re_ans:
             # item 去掉首尾空格
             item = item.strip()
@@ -100,11 +133,11 @@ if __name__ == '__main__':
                                     # print("done!")
                                     file_log.write("temp_en : " + temp_en +"\n")
                                     file_log.write("item : " + item +"\n")
-
                                     file_log.write("zh:\t" + oldzh.strip() +"\n")
                                     file_log.write("olden:\t" + line_en.strip() + "\n")
                                     file_log.write("newen:\t" + line_en.replace(temp_en.strip(),item) +"\n" +"\n")
                                     line_en = line_en.replace(temp_en.strip(),item)
+                                    flag = 0
                                     break
                             continue
                         if i != ' ':
@@ -121,12 +154,16 @@ if __name__ == '__main__':
                 # file_log.write("\nradio <= 0.7: \n")
                 # file_log.write(line_en)
                 # file_log.write(item)
+        if flag == 0:
+            flag = 1
+        else:
+            file4.write(line_en.strip() + "\n\n")
+            file4.write(line_zh.strip() + "\n\n\n")
         file3.write(line_en.strip() + "\n")
+        # break
 
     print("Done!")
 
 
 
-# 测试
-# line_en = "i have an iPhone 7"
-# line_zh = "我有一个iphone7"
+
