@@ -173,48 +173,86 @@ if __name__ == '__main__':
                     subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
                     # print(subpos)
 
-            # 长度相近 而且 不在禁用词表里
             else:
-                # 这里有分词要求  可以选择使用
-                # enitem item中的存英文 不包含标点之类的
-                enitem = pattern2.findall(item)
-                print(enitem)
-                temp_line_en = line_en
-                for itemword in enitem:
-                    # print(item,itemword)
-                    if len(find_lcseque(en_processed, itemword)) / len(
-                            itemword) > 0.7 and itemword not in list_stopwords:  # 这个数值待调整
-                        # file_log.write("\nradio <= 0.7: \n")
-                        # file_log.write(line_zh + "\n")
-                        # file_log.write(line_en + "\n")
-                        # file_log.write(item + "\n\n")
-                        # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
-                        # 不处理包含数字的
-                        if len(pattern_num.findall(itemword)) != 0:
-                            # print("1")
-                            continue
-                        for word in temp_line_en.split():
-                            # print("2 " + word)
-                            if word not in list_stopwords \
-                                    and len(pattern2.findall(word)) != 0 \
-                                    and len(pattern_num.findall(word)) == 0 \
-                                    and len(pattern_noten.findall(word)) == 0 \
-                                    and len(pattern_noten.findall(itemword)) == 0 \
-                                    :
-                                print("3" + word)
-                                if Levenshtein.distance(word, itemword) / len(itemword) < 0.3:
-                                    # print("4")
-                                    # print(word,itemword,item)
-                                    # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
+               # 这里有分词要求  可以选择使用
+               # enitem item中的存英文 不包含标点之类的
+               enitem = pattern2.findall(item)
+               print(enitem)
+               temp_line_en = line_en
+               for itemword in enitem:
+                   # print(item,itemword)
+                   if len(find_lcseque(en_processed, itemword)) / len(
+                           itemword) > 0.7 and itemword not in list_stopwords:  # 这个数值待调整
+                       # file_log.write("\nradio <= 0.7: \n")
+                       # file_log.write(line_zh + "\n")
+                       # file_log.write(line_en + "\n")
+                       # file_log.write(item + "\n\n")
+                       # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
+                       # 不处理包含数字的
+                       if len(pattern_num.findall(itemword)) != 0:
+                           # print("1")
+                           continue
+                       for word in temp_line_en.split():
+                           # print("2 " + word)
+                           if word not in list_stopwords \
+                                   and len(pattern2.findall(word)) != 0 \
+                                   and len(pattern_num.findall(word)) == 0 \
+                                   and len(pattern_noten.findall(word)) == 0 \
+                                   and len(pattern_noten.findall(itemword)) == 0 \
+                                   and RemoveSpaceToSmaoll(word) != RemoveSpaceToSmaoll(itemword) \
+                                   :
+                               print("3" + word)
+                               if Levenshtein.distance(word, itemword) / len(itemword) < 0.3:
+                                   # print("4")
+                                   # print(word,itemword,item)
+                                   # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
 
-                                    file_log.write("\nsimilar 0.7 0.3: \n")
-                                    file_log.write("oldword:" + word + "  \n" + "newword:  " + item + "  " + itemword)
-                                    file_log.write(
-                                        "\nold: " + line_en + "\n" + "  itemword:  " + itemword + line_zh + "  item:" + item)
-                                    line_en = line_en.replace(word, enitem)
-                                    count = count + 1
-                                    flag = 0
-                                    file_log.write("\nnew: " + line_en + "\n")
+                                   file_log.write("\nsimilar 0.7 0.3: \n")
+                                   file_log.write("oldword:" + word + "  \n" + "newword:  " + itemword)
+                                   file_log.write(
+                                       "\nold: " + line_en + "\n" + "zh: "+ line_zh + "\n  item:" + item)
+                                   line_en = line_en.replace(word, itemword)
+                                   count = count + 1
+                                   flag = 0
+                                   file_log.write("\nnew: " + line_en + "\n")
+
+
+            ''' 上一个方法 24.96'''
+            # # 上一个方法 24.96
+            # elif len(find_lcseque(en_processed, zh_processed)) / len(
+            #                 zh_processed) > 0.7 and zh_processed not in list_stopwords:  # 这个数值待调整
+            #             # file_log.write("\nradio <= 0.7: \n")
+            #             # file_log.write(line_zh + "\n")
+            #             # file_log.write(line_en + "\n")
+            #             # file_log.write(item + "\n\n")
+            #             # print(line_en, " zh_processed: " + zh_processed, line_zh,"item:" + item , re_ans)
+            #             # 不处理包含数字的
+            #             if len(pattern_num.findall(zh_processed)) != 0:
+            #                 # print("1")
+            #                 continue
+            #             for word in line_en.split():
+            #                 # print("2 " + word)
+            #                 if word not in list_stopwords \
+            #                         and len(pattern2.findall(word)) != 0 \
+            #                         and len(pattern_num.findall(word)) == 0 \
+            #                         and len(pattern_noten.findall(word)) == 0 \
+            #                         and len(pattern_noten.findall(zh_processed)) == 0 \
+            #                         and RemoveSpaceToSmaoll(word) != RemoveSpaceToSmaoll(zh_processed) \
+            #                         :
+            #                     print("3" + word)
+            #                     if Levenshtein.distance(word, zh_processed) / len(zh_processed) < 0.3:
+            #                         # print("4")
+            #                         # print(word,zh_processed,item)
+            #                         # print(line_en, " zh_processed: " + zh_processed, line_zh,"item:" + item , re_ans)
+            #
+            #                         file_log.write("\nsimilar 0.7 0.3: \n")
+            #                         file_log.write("oldword:" + word + "  \n" + "newword:  " + zh_processed)
+            #                         file_log.write(
+            #                             "\nold: " + line_en + "\n" + "zh: "+ line_zh + "\n  item:" + item)
+            #                         line_en = line_en.replace(word, item)
+            #                         count = count + 1
+            #                         flag = 0
+            #                         file_log.write("\nnew: " + line_en + "\n")
 
         if flag == 0:
             flag = 1
@@ -232,10 +270,50 @@ if __name__ == '__main__':
         file3.write(line_en.strip() + "\n")
         # break
     print(count)
-    file3.write(str(count) + "\n")
-    file3.write("Done!")
     print("Done!")
 
 
 
 
+ # else:
+ #                # 这里有分词要求  可以选择使用
+ #                # enitem item中的存英文 不包含标点之类的
+ #                enitem = pattern2.findall(item)
+ #                print(enitem)
+ #                temp_line_en = line_en
+ #                for itemword in enitem:
+ #                    # print(item,itemword)
+ #                    if len(find_lcseque(en_processed, itemword)) / len(
+ #                            itemword) > 0.7 and itemword not in list_stopwords:  # 这个数值待调整
+ #                        # file_log.write("\nradio <= 0.7: \n")
+ #                        # file_log.write(line_zh + "\n")
+ #                        # file_log.write(line_en + "\n")
+ #                        # file_log.write(item + "\n\n")
+ #                        # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
+ #                        # 不处理包含数字的
+ #                        if len(pattern_num.findall(itemword)) != 0:
+ #                            # print("1")
+ #                            continue
+ #                        for word in temp_line_en.split():
+ #                            # print("2 " + word)
+ #                            if word not in list_stopwords \
+ #                                    and len(pattern2.findall(word)) != 0 \
+ #                                    and len(pattern_num.findall(word)) == 0 \
+ #                                    and len(pattern_noten.findall(word)) == 0 \
+ #                                    and len(pattern_noten.findall(itemword)) == 0 \
+ #                                    and RemoveSpaceToSmaoll(word) != RemoveSpaceToSmaoll(itemword) \
+ #                                    :
+ #                                print("3" + word)
+ #                                if Levenshtein.distance(word, itemword) / len(itemword) < 0.3:
+ #                                    # print("4")
+ #                                    # print(word,itemword,item)
+ #                                    # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
+ #
+ #                                    file_log.write("\nsimilar 0.7 0.3: \n")
+ #                                    file_log.write("oldword:" + word + "  \n" + "newword:  " + itemword)
+ #                                    file_log.write(
+ #                                        "\nold: " + line_en + "\n" + "zh: "+ line_zh + "\n  item:" + item)
+ #                                    line_en = line_en.replace(word, itemword)
+ #                                    count = count + 1
+ #                                    flag = 0
+ #                                    file_log.write("\nnew: " + line_en + "\n")
