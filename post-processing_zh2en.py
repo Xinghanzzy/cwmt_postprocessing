@@ -1,53 +1,54 @@
 # coding=utf-8
 
 import re
+import sys
+import time
 import numpy
+import Levenshtein
+
+
 # en2zh
 
-# 2018-4-6 15:54:31
-# 完全匹配完成,修改部分符号问题
-#       消除所有符号再额外进行匹配&替换
-#
-#
-#
 def RemoveSpaceToSmaoll(str):
-    str = str.replace(" ","")
+    str = str.replace(" ", "")
     str = str.lower()
     return str
-    
-def find_lcseque(s1, s2):   
-     # 生成字符串长度加1的0矩阵，m用来保存对应位置匹配的结果  
-    m = [ [ 0 for x in range(len(s2)+1) ] for y in range(len(s1)+1) ]   
-    # d用来记录转移方向  
-    d = [ [ None for x in range(len(s2)+1) ] for y in range(len(s1)+1) ]   
-  
-    for p1 in range(len(s1)):   
-        for p2 in range(len(s2)):   
-            if s1[p1] == s2[p2]:            #字符匹配成功，则该位置的值为左上方的值加1  
-                m[p1+1][p2+1] = m[p1][p2]+1  
-                d[p1+1][p2+1] = 'ok'            
-            elif m[p1+1][p2] > m[p1][p2+1]:  #左值大于上值，则该位置的值为左值，并标记回溯时的方向  
-                m[p1+1][p2+1] = m[p1+1][p2]   
-                d[p1+1][p2+1] = 'left'            
-            else:                           #上值大于左值，则该位置的值为上值，并标记方向up  
-                m[p1+1][p2+1] = m[p1][p2+1]     
-                d[p1+1][p2+1] = 'up'           
-    (p1, p2) = (len(s1), len(s2))   
-    # print numpy.array(d)  
-    s = []   
-    while m[p1][p2]:    #不为None时  
-        c = d[p1][p2]  
-        if c == 'ok':   #匹配成功，插入该字符，并向左上角找下一个  
-            s.append(s1[p1-1])  
-            p1-=1  
-            p2-=1   
-        if c =='left':  #根据标记，向左找下一个  
-            p2 -= 1  
-        if c == 'up':   #根据标记，向上找下一个  
-            p1 -= 1  
-    s.reverse()   
-    return ''.join(s)   
-  
+
+
+def find_lcseque(s1, s2):
+    # 生成字符串长度加1的0矩阵，m用来保存对应位置匹配的结果
+    m = [[0 for x in range(len(s2) + 1)] for y in range(len(s1) + 1)]
+    # d用来记录转移方向
+    d = [[None for x in range(len(s2) + 1)] for y in range(len(s1) + 1)]
+
+    for p1 in range(len(s1)):
+        for p2 in range(len(s2)):
+            if s1[p1] == s2[p2]:  # 字符匹配成功，则该位置的值为左上方的值加1
+                m[p1 + 1][p2 + 1] = m[p1][p2] + 1
+                d[p1 + 1][p2 + 1] = 'ok'
+            elif m[p1 + 1][p2] > m[p1][p2 + 1]:  # 左值大于上值，则该位置的值为左值，并标记回溯时的方向
+                m[p1 + 1][p2 + 1] = m[p1 + 1][p2]
+                d[p1 + 1][p2 + 1] = 'left'
+            else:  # 上值大于左值，则该位置的值为上值，并标记方向up
+                m[p1 + 1][p2 + 1] = m[p1][p2 + 1]
+                d[p1 + 1][p2 + 1] = 'up'
+    (p1, p2) = (len(s1), len(s2))
+    # print numpy.array(d)
+    s = []
+    while m[p1][p2]:  # 不为None时
+        c = d[p1][p2]
+        if c == 'ok':  # 匹配成功，插入该字符，并向左上角找下一个
+            s.append(s1[p1 - 1])
+            p1 -= 1
+            p2 -= 1
+        if c == 'left':  # 根据标记，向左找下一个
+            p2 -= 1
+        if c == 'up':  # 根据标记，向上找下一个
+            p1 -= 1
+    s.reverse()
+    return ''.join(s)
+
+
 def find_n_sub_str(src, sub, pos, start):
     index = src.find(sub, start)
     if index != -1 and pos > 0:
@@ -55,21 +56,41 @@ def find_n_sub_str(src, sub, pos, start):
     return index
 
 
+def GetListOfStopWords(filepath):
+    f_stop = open(filepath)
+    try:
+        f_stop_text = f_stop.read()
+        # f_stop_text = unicode(f_stop_text, 'utf-8')
+    finally:
+        f_stop.close()
+    f_stop_seg_list = f_stop_text.split('\n')
+    # print(f_stop_seg_list)
+    return f_stop_seg_list
+
 
 if __name__ == '__main__':
     # file1 = open("en.txt","r",encoding='UTF-8')
     # file2 = open("ggzh_mt061.txt","r",encoding='UTF-8')
-    file1 = open("cwmt18-dev.beam12.alpha1.3.ensemble15.trans", "r", encoding='UTF-8') # en
-    file2 = open("cwmt-zh.dev.replace.token.del", "r", encoding='UTF-8') # zh
-    file3 = open("liout2.txt","w",encoding='UTF-8')
+    file1 = open("cwmt18-dev.beam12.alpha1.3.ensemble15.trans", "r", encoding='UTF-8')  # en
+    file2 = open("cwmt-zh.dev.replace.token.del", "r", encoding='UTF-8')  # zh
+    file3 = open("liout2.txt", "w", encoding='UTF-8')
     file4 = open("dont.txt", "w", encoding='UTF-8')
-    file_log = open("lozh2en.txt","a",encoding='UTF-8')
-    file_log.write("\n*****************************************************\n\n")
+    file_log = open("lozh2en 4 8", "a", encoding='UTF-8')
+    file_log.write("\n***********************" + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(
+        time.time())) + "******************************\n\n")
 
-    pattern_allsymbol = re.compile(r'[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。？、~@#￥%……&*（）]+')
+    # 加载停用词表
+    list_stopwords = GetListOfStopWords("ENstopwords891.txt")
+
+    pattern_allsymbol = re.compile(r'[\s+\.\:\#\!\/_,$%^*)(+\"\']+|[+——！，。？、~@#￥%……&*（）]+')
     pattern = re.compile(r'[ 0-9A-Za-z.]+')
     pattern2 = re.compile(r'[A-Za-z]+')
+    pattern_noten = re.compile(r'[^A-Za-z]+')
+    pattern_num = re.compile(r'[0-9]+')
     pattern = re.compile(r'[^\u4e00-\u9fa5]+')
+
+    count = 0
+    count_dont = 0
 
     while True:
         line_en = file1.readline()
@@ -88,16 +109,17 @@ if __name__ == '__main__':
             continue
 
         flag = 1
-        re_ans = pattern.findall(line_zh)   #中文中的所有英文成分
 
-        # 预处理
+        re_ans = pattern.findall(line_zh)  # 中文中的所有英文成分
+
+        # 预处理 增加去掉符号的
         for item in re_ans:
             # item = item.strip()
             if len(item) == 0:
                 re_ans.remove(item)
             else:
-                item_sub = re.sub(r"[\s+\.\!\/_,$%^*(+\"\']+|[+——！，。？、~@#￥%……&*（）]+", "",item)
-                if item != item_sub :
+                item_sub = re.sub(r"[\.\!\/_,$%^:#\-!@#$%^&*)(+\"\']+|[+——！，。？、~@#￥%……&*（）]+", "", item)
+                if item != item_sub:
                     re_ans.append(item_sub)
         print(re_ans)
 
@@ -107,15 +129,16 @@ if __name__ == '__main__':
             # 终止处理
             if len(item) == 0:
                 continue
-            if item == '.' or item[0] == '.' :
+            if item == '.' or item[0] == '.':
                 continue
-            if item in line_en :
+            if item in line_en:
                 continue
 
             # 完全去空格处理
             en_processed = RemoveSpaceToSmaoll(line_en)
             zh_processed = RemoveSpaceToSmaoll(item)
-            if zh_processed in en_processed:   # 完全相同 大小写和空格问题 解决方法 定位，完全替换
+
+            if zh_processed in en_processed:  # 完全相同 大小写和空格问题 解决方法 定位，完全替换
                 pos = 0
                 start = 0
                 subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
@@ -131,12 +154,14 @@ if __name__ == '__main__':
                             if RemoveSpaceToSmaoll(temp_en) == zh_processed:
                                 if temp_en.strip() != item.strip():
                                     # print("done!")
-                                    file_log.write("temp_en : " + temp_en +"\n")
-                                    file_log.write("item : " + item +"\n")
-                                    file_log.write("zh:\t" + oldzh.strip() +"\n")
+                                    file_log.write("temp_en : " + temp_en + "\n")
+                                    file_log.write("item : " + item + "\n")
+                                    file_log.write("zh:\t" + oldzh.strip() + "\n")
                                     file_log.write("olden:\t" + line_en.strip() + "\n")
-                                    file_log.write("newen:\t" + line_en.replace(temp_en.strip(),item) +"\n" +"\n")
-                                    line_en = line_en.replace(temp_en.strip(),item)
+                                    file_log.write("newen:\t" + line_en.replace(temp_en.strip(), item) + "\n" + "\n")
+                                    line_en = line_en.replace(temp_en.strip(), item)
+                                    count = count + 1
+                                    print(count)
                                     flag = 0
                                     break
                             continue
@@ -147,21 +172,68 @@ if __name__ == '__main__':
                     pos = pos + 1
                     subpos = find_n_sub_str(en_processed, zh_processed, pos, start)
                     # print(subpos)
-            if len(find_lcseque(en_processed,zh_processed))/len(zh_processed) > 0.7 :      #这个数值待调整
-                pass
+
+            # 长度相近 而且 不在禁用词表里
             else:
-                pass
-                # file_log.write("\nradio <= 0.7: \n")
-                # file_log.write(line_en)
-                # file_log.write(item)
+                # 这里有分词要求  可以选择使用
+                # enitem item中的存英文 不包含标点之类的
+                enitem = pattern2.findall(item)
+                print(enitem)
+                temp_line_en = line_en
+                for itemword in enitem:
+                    # print(item,itemword)
+                    if len(find_lcseque(en_processed, itemword)) / len(
+                            itemword) > 0.7 and itemword not in list_stopwords:  # 这个数值待调整
+                        # file_log.write("\nradio <= 0.7: \n")
+                        # file_log.write(line_zh + "\n")
+                        # file_log.write(line_en + "\n")
+                        # file_log.write(item + "\n\n")
+                        # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
+                        # 不处理包含数字的
+                        if len(pattern_num.findall(itemword)) != 0:
+                            # print("1")
+                            continue
+                        for word in temp_line_en.split():
+                            # print("2 " + word)
+                            if word not in list_stopwords \
+                                    and len(pattern2.findall(word)) != 0 \
+                                    and len(pattern_num.findall(word)) == 0 \
+                                    and len(pattern_noten.findall(word)) == 0 \
+                                    and len(pattern_noten.findall(itemword)) == 0 \
+                                    :
+                                print("3" + word)
+                                if Levenshtein.distance(word, itemword) / len(itemword) < 0.3:
+                                    # print("4")
+                                    # print(word,itemword,item)
+                                    # print(line_en, " itemword: " + itemword, line_zh,"item:" + item , re_ans)
+
+                                    file_log.write("\nsimilar 0.7 0.3: \n")
+                                    file_log.write("oldword:" + word + "  \n" + "newword:  " + item + "  " + itemword)
+                                    file_log.write(
+                                        "\nold: " + line_en + "\n" + "  itemword:  " + itemword + line_zh + "  item:" + item)
+                                    line_en = line_en.replace(word, enitem)
+                                    count = count + 1
+                                    flag = 0
+                                    file_log.write("\nnew: " + line_en + "\n")
+
         if flag == 0:
             flag = 1
-        else:
+        elif item not in line_en:
             file4.write(line_en.strip() + "\n\n")
-            file4.write(line_zh.strip() + "\n\n\n")
+            file4.write(line_zh.strip() + "\n")
+            for i in re_ans:
+                file4.write(i + " ")
+            file4.write("\n")
+            file4.write(str(len(find_lcseque(en_processed, zh_processed)) / len(zh_processed)))
+            file4.write("\n")
+            file4.write(str(Levenshtein.distance(word, zh_processed) / len(zh_processed)))
+            file4.write("\n\n\n")
+
         file3.write(line_en.strip() + "\n")
         # break
-
+    print(count)
+    file3.write(str(count) + "\n")
+    file3.write("Done!")
     print("Done!")
 
 
